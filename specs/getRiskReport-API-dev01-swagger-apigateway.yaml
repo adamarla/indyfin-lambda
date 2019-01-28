@@ -1,0 +1,32 @@
+---
+swagger: "2.0"
+info:
+  version: "2019-01-25T17:34:31Z"
+  title: "getRiskReport-API"
+host: "n9zoyzpsbd.execute-api.us-east-2.amazonaws.com"
+basePath: "/dev01"
+schemes:
+- "https"
+paths:
+  /getRiskReport:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-2:301104022241:function:getRiskReport/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws_proxy"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"
