@@ -1,16 +1,16 @@
-
 version: 0.2
+
 phases:
-  # install:
-  #  commands:
-  #    - aws cloudformation package --template-file getRiskReport.yaml --s3-bucket adamarla-deployment-generic --output-template-file packaged-template.yaml
+  install:
+    commands:
+      - aws cloudformation package --template-file getRiskReport.yaml --s3-bucket adamarla-deployment-generic --output-template-file packaged-template.yaml
   build:
     commands: 
-      - echo Hello from Codebuild
+      - aws cloudformation deploy --template-file packaged-template.yaml --stack-name GetRiskReport-APIGway-Lambda-DynDb
       # - that's it
-# artifacts:
-#  type: zip
-#  files:
-#    - getRiskReport.yaml
-#    - packaged-template.yaml
+artifacts:
+  type: zip
+  files:
+    - getRiskReport.yaml
+    - packaged-template.yaml
 
