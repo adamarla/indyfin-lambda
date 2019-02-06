@@ -1,9 +1,9 @@
 version: 0.2
 
 phases:
-  # install:
-  #  commands:
-  #    - echo Hello from Code build install
+  install:
+    commands:
+     - echo Hello from Code build install
       # - aws cloudformation deploy --template-file packaged-template.yaml --stack-name GetRiskReport-APIGway-Lambda-DynDb
   build:
     commands: 
