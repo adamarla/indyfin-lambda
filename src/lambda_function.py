@@ -20,7 +20,7 @@ def lambda_handler(event, context):
     except Exception as e:
         print(e)
     risk_profile = {
-        "horizon_years": 30,
+        "horizon_years": 15,
         "upside": 0.3,
         "downside": 0.25,
         "item": item,
