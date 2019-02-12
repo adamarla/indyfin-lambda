@@ -3,7 +3,7 @@ swagger: "2.0"
 info:
   version: "2019-01-25T17:34:31Z"
   title: "getRiskReport-API"
-host: "n9zoyzpsbd.execute-api.us-east-2.amazonaws.com"
+host: "p7cckjzmgc.execute-api.us-east-2.amazonaws.com"
 basePath: "/dev01"
 schemes:
 - "https"
