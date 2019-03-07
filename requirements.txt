@@ -1,0 +1,1 @@
+pip install 'chargebee>=2,<3'
