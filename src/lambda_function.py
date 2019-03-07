@@ -21,7 +21,7 @@ def lambda_handler(event, context):
         print(e)
     risk_profile = {
         "horizon_years": 10,
-        "upside": 0.3,
+        "upside": 0.25,
         "downside": 0.25,
         "item": item,
     }
