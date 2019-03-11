@@ -36,4 +36,3 @@ Resources:
 
       DefinitionUri: specs/getRiskReport-API-dev01-swagger-apigateway.yaml
       StageName: dev01
-

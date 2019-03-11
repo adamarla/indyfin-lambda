@@ -65,7 +65,7 @@ def lambda_handler(event, context):
     elif "hosted_page_id" in query_params:
         body = confirm_subscription_details(query_params["hosted_page_id"])
     else:
-        body = get_subscription_details(query_params["hosted_page_id"])
+        body = get_subscription_details(query_params["subscription_id"])
 
     return {
         'statusCode': 200,
