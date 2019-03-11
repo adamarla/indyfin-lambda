@@ -14,7 +14,7 @@ class CustomJsonEncoder(json.JSONEncoder):
 
 
 def generate_checkout_new_url(plan_id):
-    customer_id = "janedoe@jdmail.com"  # TODO: Get user email (or Id) from database table
+    customer_id = "janedoe@jdmail.com"
     result = chargebee.HostedPage.checkout_new({
         "subscription": {
             "plan_id": plan_id
