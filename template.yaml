@@ -14,17 +14,35 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 3
-      Role: 'arn:aws:iam::301104022241:role/service-role/defaultRole'
+      Role:
+        Fn::Sub: arn:aws:iam::${AWS::AccountId}:role/service-role/defaultRole'
       Events:
-        RiskReportApi:
+        RESTEndPoint:
           Type: Api
           Properties:
-#            RestApiId: !Ref Api1
             Path: /riskReport
             Method: GET
+            RestApiId:
+              Ref: RiskReportApi
 
-#  Api1:
-#    Type: 'AWS::Serverless::Api'
-#    Properties:
+  RiskReportApi:
+    Type: 'AWS::Serverless::Api'
+    Properties:
+      Name: 'risk-report-api'
 #      DefinitionUri: specs/getRiskReport-API-dev01-swagger-apigateway.yaml
-#      StageName: dev01
+      StageName: default
+      DefinitionBody:
+        swagger: 2.0
+        info:
+          title:
+            Ref: AWS::StackName
+        paths:
+          "/riskReport":
+            get:
+              produces:
+                - 'application/json'
+              x-amazon-apigateway-integration:
+                httpMethod: POST
+                type: aws_proxy
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${RiskSummary.Arn}/invocations
