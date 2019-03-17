@@ -5,10 +5,6 @@ phases:
     commands:
       - echo Hello from Code build install
       - aws cloudformation package --template-file template.yaml --s3-bucket adamarla-deployment-generic --output-template-file packaged-template.yaml
-#  build:
-#    commands:
-#      - echo Hello from Code Build build
-#      - aws cloudformation deploy --template-file packaged-template.yaml --stack-name GetRiskReport-APIGway-Lambda-DynDb
 artifacts:
   type: zip
   files:

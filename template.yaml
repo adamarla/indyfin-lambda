@@ -4,35 +4,27 @@ Description: An AWS Serverless Specification template describing your function.
 
 Resources:
 
-  getRiskReport:
+  RiskSummary:
     Type: 'AWS::Serverless::Function'
 
     Properties:
-
       Handler: lambda_function.lambda_handler
-
       Runtime: python3.6
-
       CodeUri: src/
       Description: ''
       MemorySize: 128
       Timeout: 3
       Role: 'arn:aws:iam::301104022241:role/service-role/defaultRole'
-
       Events:
-
-        Api1:
+        RiskReportApi:
           Type: Api
           Properties:
-            RestApiId: !Ref Api1
-            Path: /getRiskReport
+#            RestApiId: !Ref Api1
+            Path: /riskReport
             Method: GET
 
-  Api1:
-    
-    Type: 'AWS::Serverless::Api'
-    
-    Properties:
-
-      DefinitionUri: specs/getRiskReport-API-dev01-swagger-apigateway.yaml
-      StageName: dev01
+#  Api1:
+#    Type: 'AWS::Serverless::Api'
+#    Properties:
+#      DefinitionUri: specs/getRiskReport-API-dev01-swagger-apigateway.yaml
+#      StageName: dev01
