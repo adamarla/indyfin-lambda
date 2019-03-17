@@ -1,3 +1,5 @@
+import json
+
 
 def lambda_handler(event, context):
     body = {
@@ -13,6 +15,6 @@ def lambda_handler(event, context):
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*"
         },
-        'body': body
+        'body': json.dumps(body)
     }
 
