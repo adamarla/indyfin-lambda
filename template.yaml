@@ -14,8 +14,7 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 3
-      Role:
-        Fn::Sub: arn:aws:iam::${AWS::AccountId}:role/service-role/defaultRole'
+      Role: !Sub: 'arn:aws:iam::${AWS::AccountId}:role/service-role/defaultRole'
       Events:
         RESTEndPoint:
           Type: Api
