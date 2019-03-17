@@ -14,7 +14,7 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 3
-      Role: !Sub: 'arn:aws:iam::${AWS::AccountId}:role/service-role/defaultRole'
+      Role: !Sub 'arn:aws:iam::${AWS::AccountId}:role/service-role/defaultRole'
       Events:
         RESTEndPoint:
           Type: Api
@@ -45,3 +45,4 @@ Resources:
                 type: aws_proxy
                 uri:
                   Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${RiskSummary.Arn}/invocations
+                responses: {}
