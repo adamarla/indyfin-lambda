@@ -6,8 +6,8 @@ Resources:
 
   RiskSummary:
     Type: 'AWS::Serverless::Function'
-
     Properties:
+      FunctionName: 'risk-summary'
       Handler: lambda_function.lambda_handler
       Runtime: python3.6
       CodeUri: src/
